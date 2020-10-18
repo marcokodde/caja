@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\Countries;
+use App\Http\Livewire\Posts;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +37,8 @@ Route::resource('/permission', PermissionController::class)->names('permission')
 
 // Users
 Route::resource('/user', UserController::class, ['except' => ['create', 'store']])->names('user');
+
+// Posts
+
+Route::get('post',Posts::class);
+Route::get('country',Countries::class); // Countries

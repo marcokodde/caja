@@ -22,7 +22,7 @@ class RoleController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index() {
-		$this->authorize('hasaccess', 'roles.index');
+        $this->authorize('hasaccess', 'roles.index');
         $roles = Role::Orderby('id', 'ASC')->paginate(10);
         $header = 'Roles';
         $slot = 'Slot';
