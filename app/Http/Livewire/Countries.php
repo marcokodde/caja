@@ -12,14 +12,15 @@ class Countries extends Component
 {
     use AuthorizesRequests;
     use WithPagination;
-    public $country, $code, $url,$isdefault,$include,$latinoamerica;
+    public $country, $code, $url,$default,$include,$latinoamerica;
     public $search;
+    public $record_id;
     public $searchTerm;
     public $isOpen = 0;
     private $pagination = 6;         //paginación de tabla
 
     public function mount(){
-        $this->authorize('hasaccess', 'roles.index');
+        //$this->authorize('hasaccess', 'roles.index');
     }
       /**
      * The attributes that are mass assignable.
@@ -90,7 +91,7 @@ class Countries extends Component
         $this->country = '';
         $this->code = '';
         $this->url = '';
-        $this->isdefault = false;
+        $this->default = false;
         $this->include = false;
         $this->latinoamerica = false;
     }

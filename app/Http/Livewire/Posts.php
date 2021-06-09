@@ -114,14 +114,35 @@ use App\Models\Post;
          $this->openModal();
     }
 
-    
+    public function select($id)
+    {
+        $post = Post::findOrFail($id);
+        $this->post_id = $id;
+        $this->title = $post->title;
+        $this->body = $post->body;
+        $this->openModal();
+    }
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+     public function nuevo()
+    {
+       $this->openModal();
+    }
 
+    public function dos()
+    {
+       $this->openModal();
+    }
+
+     public function modal()
+    {
+        $this->openModal();
+    }
+    
     public function delete($id)
     {
         Post::find($id)->delete();

@@ -21,8 +21,8 @@ class UserSeeder extends Seeder
         ])->roles()->sync([1]);
 
         User::create([
-			'name' => 'Usuario Registrado Genral',
-			'email' => 'registrado@dominio.com',
+			'name' => 'Usuario Genral',
+			'email' => 'soporte@admin.com',
 			'password' => Hash::make('password'),
         ])->roles()->sync([2]);
     }

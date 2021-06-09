@@ -3,8 +3,9 @@
 namespace App\excellsus\models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class permission extends Model {
+class Permission extends Model {
 	protected $fillable = [
 		'name', 'slug', 'description',
 	];

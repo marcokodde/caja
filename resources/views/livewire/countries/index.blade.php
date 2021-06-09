@@ -49,19 +49,21 @@
                         <td class="border px-4 py-2 w-20">{{ $record->code }}</td>
                         <td class="border px-4 py-2 w-20">{{ $record->url }}</td>
                         <td class="border px-4 py-2 w-20 text-center">
-                           <input type="checkbox" 
+                           <input type="checkbox" disabled
                             @if($record->default)  checked @endif>
                         </td>
                         <td class="border px-4 py-2 w-20 text-center">
-                            <input type="checkbox" 
+                            <input type="checkbox" disabled
                              @if($record->include)  checked @endif>
                          </td>
                          <td class="border px-4 py-2 w-20 text-center">
-                            <input type="checkbox" 
+                            <input type="checkbox" disabled
                              @if($record->latinoamerica)  checked @endif>
                          </td>
-                        <td colspan="2" class="border px-4 py-2 text-center">
+                        <td colspan="3" class="border px-4 py-2 text-center">
+								
                         <button wire:click="edit({{ $record->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
+                        
                         <button wire:click="delete({{ $record->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
                         </td>
                     </tr>

@@ -15,6 +15,15 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('country') }}" :active="request()->routeIs('country')">
+                        {{ __('Ciudades') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('post') }}" :active="request()->routeIs('post')">
+                        {{ __('Posts') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('customer') }}" :active="request()->routeIs('customer')">
+                        {{ __('Clientes') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -22,9 +31,10 @@
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-jet-dropdown align="right" width="48">
                     <x-slot name="trigger">
+                    
                         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                             <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
-                                <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                <img class="h-8 w-8 rounded-full object-cover" src="{{Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->name }}" />
                             </button>
                         @else
                             <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">

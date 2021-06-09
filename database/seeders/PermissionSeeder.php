@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\excellsus\models\Permission;
 
+use App\Models\Permission;
 class PermissionSeeder extends Seeder
 {
     /**

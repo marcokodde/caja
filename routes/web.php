@@ -1,11 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\Calendars;
 use App\Http\Livewire\Countries;
+use App\Http\Livewire\CustomerCarts;
+use App\Http\Livewire\Customers;
 use App\Http\Livewire\Posts;
+use Illuminate\Support\Facades\Auth;
+use Livewire\Livewire;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +45,14 @@ Route::resource('/permission', PermissionController::class)->names('permission')
 Route::resource('/user', UserController::class, ['except' => ['create', 'store']])->names('user');
 
 // Posts
+Route::get('country',Countries::class)->name('country'); // Countries
+Route::get('post',Posts::class)->name('post');
+Route::get('customer',Customers::class)->name('customer');
+Route::get('customer-cart',CustomerCarts::class)->name('customer-cart');
 
-Route::get('post',Posts::class);
-Route::get('country',Countries::class); // Countries
+ 
+Livewire::component('calendar', Calendars::class);
+
+//Payments Controllers
+Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
+Route::post('/transaction', [PaymentController::class, 'makePayment'])->name('make-payment');

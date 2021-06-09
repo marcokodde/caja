@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\excellsus\models\Role;
+use App\Models\Role;
 
 class RoleSeeder extends Seeder
 {

@@ -13,7 +13,7 @@ class Country extends Model
         'country',
         'code',
         'url',
-        'isdefault',
+        'default',
         'include'
     ];
     

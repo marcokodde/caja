@@ -75,7 +75,7 @@ class User extends Authenticatable
      */
 
     public function ROLES() {
-		return $this->belongsToMany('App\excellsus\models\Role')->withTimesTamps();
+		return $this->belongsToMany('App\Models\Role')->withTimesTamps();
     }
     
 }
