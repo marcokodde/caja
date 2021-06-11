@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FullCalenderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PermissionController;
@@ -50,9 +51,10 @@ Route::get('post',Posts::class)->name('post');
 Route::get('customer',Customers::class)->name('customer');
 Route::get('customer-cart',CustomerCarts::class)->name('customer-cart');
 
- 
-Livewire::component('calendar', Calendars::class);
+Route::get('calendar',Calendars::class)->name('calendar');
 
+Route::get('/fullcalender', [FullCalenderController::class, 'index'])->name('fullcalender');
+Route::post('/fullcalender/action', [FullCalenderController::class, 'action'])->name('fullcalender/action');
 //Payments Controllers
 Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
 Route::post('/transaction', [PaymentController::class, 'makePayment'])->name('make-payment');

@@ -12,10 +12,11 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.css" integrity="sha256-RCJT6YvohmGy+rWQe3hpPZez8iaPnirFVfiwaBVCk1k=" crossorigin="anonymous">
         @livewireStyles
 
         <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.js" integrity="sha256-yirUYbNvdsLHfZcQDyDMB51pfQ0Mn8siGDZOvtBgCFw=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.js" defer></script>
     </head>
     <body class="font-sans antialiased">
@@ -36,7 +37,17 @@
         </div>
 
         @stack('modals')
-
+        <script src="{{asset('js/calendar.js')}}" defer></script>
         @livewireScripts
     </body>
+    <script>
+        document.getElementById("moda").onclick = function() {
+            bgChange()
+        };
+
+        function bgChange() {
+            document.getElementById("modal").classList.toggle("hidden");
+        }
+
+    </script>
 </html>
