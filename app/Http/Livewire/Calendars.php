@@ -1,7 +1,10 @@
 <?php
 namespace App\Http\Livewire;
+
+use App\Models\Customer;
 use Livewire\Component;
 use App\Models\Event;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Carbon\Carbon as CarbonCarbon;
 class Calendars extends Component
@@ -91,9 +94,29 @@ class Calendars extends Component
     			$event = Event::find($request->id)->delete();
 
     			return response()->json($event);
-    		}
+    		} else {
+                $user = Usuario::create([
+                    'full_name' => $request->full_name,
+                    'date_reserve' => $request->date_reserve,
+                    'email' => $request->email,
+                    'address' => $request->address,
+                    'start' => $request->start,
+                    'end' => $request->end,
+                    'phone' => $request->phone,
+                    'negocio' => $request->negocio,
+    			]);
+                    dd("se Agregaron los datos");
+    			return response()->json($user);
+            }
     	}
     }
+
+    public function store(Request $request){
+        $reserva = Usuario::create($request->all()); //Obtengo todos los campos enviados desde el formulario y creo el expediente
+        return "Reservacion creada!!!";
+      }
+
+
     public function closeModal() {
 		$this->isOpen = false;
 		$this->isOpen2 = false;

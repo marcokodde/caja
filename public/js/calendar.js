@@ -13,9 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
  
     dateClick: function(info) {
-        alert('Date: ' + info.dateStr);
-        info.dayEl.style.backgroundColor = 'red';
-        bgChange()
+      bgChange()
     }
 
   });
@@ -23,10 +21,3 @@ document.addEventListener('DOMContentLoaded', function() {
   calendar.render();
 
 });
-document.getElementById("moda").onclick = function() {
-    bgChange()
-};
-
-function bgChange() {
-    document.getElementById("modal").classList.toggle("hidden");
-}

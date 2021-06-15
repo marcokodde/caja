@@ -11,6 +11,8 @@ use App\Http\Livewire\Countries;
 use App\Http\Livewire\CustomerCarts;
 use App\Http\Livewire\Customers;
 use App\Http\Livewire\Posts;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Livewire;
 
@@ -52,9 +54,13 @@ Route::get('customer',Customers::class)->name('customer');
 Route::get('customer-cart',CustomerCarts::class)->name('customer-cart');
 
 Route::get('calendar',Calendars::class)->name('calendar');
-
+Route::post('calendar/action', [Calendars::class, 'action'])->name('calendar/action');
 Route::get('/fullcalender', [FullCalenderController::class, 'index'])->name('fullcalender');
 Route::post('/fullcalender/action', [FullCalenderController::class, 'action'])->name('fullcalender/action');
 //Payments Controllers
 Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
 Route::post('/transaction', [PaymentController::class, 'makePayment'])->name('make-payment');
+
+Route::post('store', [FullCalenderController::class, 'store'])->name('store.add');
+
+require 'pruebas.php';

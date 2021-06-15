@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\Usuario;
 
 class FullCalenderController extends Controller
 {
@@ -30,7 +31,6 @@ class FullCalenderController extends Controller
     				'start'		=>	$request->start,
     				'end'		=>	$request->end
     			]);
-
     			return response()->json($event);
     		}
 
@@ -41,17 +41,37 @@ class FullCalenderController extends Controller
     				'start'		=>	$request->start,
     				'end'		=>	$request->end
     			]);
-
     			return response()->json($event);
     		}
 
     		if($request->type == 'delete')
     		{
     			$event = Event::find($request->id)->delete();
-
     			return response()->json($event);
     		}
+			
     	}
     }
+
+	public function store(Request $request) {
+        
+            $user = new Usuario();
+			$user->full_name = $request->full_name;
+			$user->date_reserve = $request->date_reserve;
+			$user->email = $request->email;
+			$user->address = $request->address;
+			$user->start = $request->start;
+			$user->end = $request->end;
+			$user->phone = $request->phone;
+			$user->negocio = $request->negocio;				
+			$user->save();
+			return response()->json($user);
+
+			return response()->json(['mensaje'=>'Registrado Correctamente']);
+			
+        }
+    }
+	
+	
 }
 ?>

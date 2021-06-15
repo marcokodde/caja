@@ -5,7 +5,7 @@
           </div>
           <!-- This element is to trick the browser into centering the modal contents. -->
           <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>​
-          <div class="inline-block mx-auto max-w-screen-lg h-full bg-white rounded-lg overflow-hidden transform pt-5 mx-5 mb-4 px-2"
+          <div class="inline-block max-w-screen-lg h-full bg-white rounded-lg overflow-hidden transform pt-5 mx-5 mb-4 px-2"
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="modal-headline">

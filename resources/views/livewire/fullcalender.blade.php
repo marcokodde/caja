@@ -16,20 +16,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
 </head>
 <body>
-        <div class="container">
-            <br />
-            <h1 class="text-center text-primary"><u>Calendario de Reservaciones</u></h1>
-            <br />
-            <div id="calendario">
-
-            </div>
-        </div>
+    <div class="container">
+        <br />
+        <h1 class="text-center text-primary"><u>Calendario de Reservaciones</u></h1>
+        <br />
+        <div id="calendario">
         </div>
     </div>
-</div>
+
+
 </body>
-{{--  <script>
-$(document).ready(function () {
+  <script>
+/* $(document).ready(function () {
     $.ajaxSetup({
         headers:{
             'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
@@ -37,17 +35,11 @@ $(document).ready(function () {
     });
    
     var calendar = $('#calendario').fullCalendar({
+        contentHeight: 400,
+
         editable:true,
+        
         locale:"es",
-            labels: {
-                today: 'Hoy',
-                prev: 'Atrás',
-                next: 'Siguiente',
-                month: 'Mes',
-                agendaWeek: 'Semana',
-                agendaDay: 'Día',
-                all_day: 'Todo el día'
-            },
         header: {
             left: 'prev,next,  today',
             center: 'title',
@@ -59,6 +51,7 @@ $(document).ready(function () {
         selectHelper: true,
         select:function(start, end, allDay)
         {
+            
             var title = prompt('Reservacion:');
             if(title)
             {
@@ -153,7 +146,7 @@ $(document).ready(function () {
             }
         }
     });
-});
-</script>  --}}
+});  */
+</script>
 </body>
 </html>
